@@ -2,17 +2,13 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 
 def search_cvs(query_text, n_results=1):
-    # Initialize ChromaDB client from the local persistent directory
     client = chromadb.PersistentClient(path="./chroma_db")
     collection = client.get_collection(name="cv_collection")
     
-    # Load the sentence transformer model
     model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
     
-    # Generate embedding for the search query
     query_embedding = model.encode(query_text).tolist()
 
-    # Query the collection for semantic similarity (limiting to 1 top result)
     results = collection.query(
         query_embeddings=[query_embedding],
         n_results=n_results

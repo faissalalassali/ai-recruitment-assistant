@@ -17,7 +17,6 @@ def index_cvs():
         print("Directory 'downloaded_cvs' not found.")
         return
 
-    # Filter files to only index CVs and ignore invoices or unwanted documents
     files = [f for f in os.listdir(cv_dir) if f.endswith('.pdf') and 'invoice' not in f.lower()]
     if not files:
         print("No valid CVs found to index.")

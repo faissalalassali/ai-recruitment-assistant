@@ -25,7 +25,6 @@ def run_screening_pipeline():
         print(f"Error: Directory '{cv_dir}' not found. Please sync emails first.")
         return
 
-    # 1. Read Job Description
     job_desc_path = "job_description.txt"
     if not os.path.exists(job_desc_path):
         print("Error: 'job_description.txt' not found.")
@@ -34,7 +33,6 @@ def run_screening_pipeline():
     with open(job_desc_path, "r", encoding="utf-8") as f:
         job_desc = f.read()
 
-    # 2. Initialize ChromaDB and Model
     client = chromadb.PersistentClient(path="./chroma_db")
     collection = client.get_or_create_collection(name="cv_collection")
     model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
@@ -56,10 +54,8 @@ def run_screening_pipeline():
         if not cv_text.strip():
             continue
 
-        # Add or get from ChromaDB
         embedding = model.encode(cv_text).tolist()
         
-        # AI Evaluation using OpenRouter
         api_key = os.getenv("OPENROUTER_API_KEY")
         base_url = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
         
@@ -104,10 +100,8 @@ Provide a valid JSON response with the following keys:
             "evaluation": ai_data
         })
 
-    # 3. Filter and Rank Candidates by Match Score (Step 11)
     candidates_results.sort(key=lambda x: x['evaluation'].get('match_score', 0), reverse=True)
 
-    # 4. Save Results (Step 12)
     with open(output_results_file, "w", encoding="utf-8") as f:
         json.dump(candidates_results, f, ensure_ascii=False, indent=4)
 
