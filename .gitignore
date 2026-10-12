@@ -1,0 +1,6 @@
+.env
+token.json
+credentials.json
+downloaded_cvs/
+__pycache__/
+venv/

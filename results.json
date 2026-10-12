@@ -1,0 +1,54 @@
+[
+    {
+        "filename": "Faissal Alassali CV.pdf",
+        "evaluation": {
+            "match_score": 90,
+            "key_strengths": [
+                "Machine Learning",
+                "Deep Learning",
+                "Natural Language Processing (NLP)",
+                "MLOps",
+                "Data Preprocessing",
+                "Model Deployment",
+                "Predictive Modeling",
+                "Fraud Detection",
+                "AI-Driven Solutions",
+                "Experience with REST APIs"
+            ],
+            "missing_skills": [
+                "Specific tools or frameworks mentioned in Job Description (if any)",
+                "Experience in non-banking sectors (if applicable)"
+            ],
+            "recommendation": "The candidate is highly qualified and shows strong alignment with the job requirements, making them a strong hire for the data science position."
+        }
+    },
+    {
+        "filename": "19387964f401de1b_INVOICE_HD_107555532.pdf",
+        "evaluation": {
+            "match_score": 25,
+            "key_strengths": [],
+            "missing_skills": [
+                "relevant work experience",
+                "education related to the job description",
+                "specific skills related to the role",
+                "communication skills",
+                "teamwork and collaboration",
+                "problem-solving abilities"
+            ],
+            "recommendation": "The candidate does not meet the necessary qualifications for the position."
+        }
+    },
+    {
+        "filename": "1937e540f8f5b64a_INVOICE_HD_AEJOHDE0154276.pdf",
+        "evaluation": {
+            "match_score": 10,
+            "key_strengths": [],
+            "missing_skills": [
+                "relevant work experience",
+                "specific job-related skills",
+                "education qualifications"
+            ],
+            "recommendation": "The candidate does not possess relevant qualifications or experience for the job."
+        }
+    }
+]
